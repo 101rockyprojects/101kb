@@ -1,1 +1,0 @@
-Dividir la aplicación en escritura (entrada) y lectura (salida).

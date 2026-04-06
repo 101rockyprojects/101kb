@@ -1,1 +1,0 @@
-Intermediario que maneja las peticiones entre aplicaciones.

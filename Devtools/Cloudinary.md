@@ -1,5 +1,0 @@
-Cloudinary es una solución integral de gestión de imágenes para aplicaciones móviles y sitios web. La aplicación ofrece carga de imágenes, almacenamiento en la nube, manipulación de imágenes, optimización de imágenes para la web y entrega. Cloudinary ofrece API y capacidades de gestión flexibles para integrarse con aplicaciones web y móviles nuevas y existentes.
-
-Cloudinary permite cargar y almacenar un número ilimitado de imágenes de forma privada y segura e incluye copias de seguridad automáticas y revisiones históricas. Posibilita manipular imágenes usando una amplia variedad de opciones, como aplicar efectos, redimensionar, recortar, detectar caras, aplicar marcas de agua y más.
-
-Las imágenes se sirven a través del CDN mundial de Akamai a fin de lograr una entrega rápida, adaptable y optimizada para cualquier dispositivo. Cloudinary actúa como solución de gestión de activos digitales. Su biblioteca de medios emplea API RESTful y SDK para automatizar la gestión de imágenes. También permite acceder a analíticas e informes avanzados para optimizar y comprender el rendimiento de las imágenes.

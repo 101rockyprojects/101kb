@@ -1,4 +1,4 @@
-/Gitignore
+/gitignore
 /.obsidian
 *secrets
 *.env

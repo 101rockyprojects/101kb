@@ -1,3 +1,0 @@
-CMS significa content management system (sistema de gestión de contenido). CMS **es un software informático o una aplicación que utiliza una base de datos para gestionar todo el contenido**, y puede ser utilizado en el desarrollo de un sitio web.
-
-[[Strapi]] es un Headless CMS, es decir, no está *atado* a un front-end. Un CMS _headless_ es una solución más eficiente y rentable para administrar el contenido, porque ofrece una mejor experiencia de sistema de administración de contenido para los desarrolladores, los creadores de contenido y sus usuarios.

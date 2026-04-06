@@ -1,8 +1,0 @@
-La hidratación (hydration en inglés) es un concepto fundamental en el mundo de las aplicaciones web construidas con frameworks de JavaScript como React o Next.js. La hidratación se refiere al proceso en el que **una página web generada en el servidor se convierte en una aplicación interactiva en el cliente**.
-
-Cuando una aplicación web se renderiza en el servidor, se genera HTML estático que se envía al navegador. Este HTML contiene la estructura básica de la página y puede incluir datos iniciales necesarios para la aplicación. Una vez que el navegador recibe este HTML, la aplicación se "hidrata", es decir, se convierte en una aplicación interactiva en el cliente. Durante la hidratación, el framework de JavaScript toma el HTML generado en el servidor y lo convierte en una representación virtual del DOM en el cliente. Luego, el framework añade interactividad a la página, como manejo de eventos, actualización dinámica de contenido y enlaces de navegación sin recargar la página.
-
-La hidratación es importante porque permite que las aplicaciones web construidas con frameworks de JavaScript ofrezcan una experiencia interactiva y dinámica sin sacrificar la indexación por los motores de búsqueda y la velocidad de carga inicial. Al renderizar la aplicación en el servidor y luego hidratarla en el cliente, se obtiene lo mejor de ambos mundos: la capacidad de crear aplicaciones interactivas complejas con JavaScript y la capacidad de proporcionar una experiencia inicial rápida y accesible.
-
-La función getLinkComponent() me renderiza un componente Link de Next.js a través de :
-`export function getLinkComponent(url) {return (<Link href={url}>Click Here</Link>);}`
