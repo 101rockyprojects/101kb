@@ -154,6 +154,7 @@ Personal configurations for better performance
   "maple-basic@@setting-color-inactive-custom-dark": "#6B5845",
   "maple-workspace@@setting-color-dirs@@dark": "#D0A416",
   "maple-editor@@setting-list-marker@@dark": "#0E7653",
-  "maple-editor@@setting-list-guide-color@@dark": "#097465"
+  "maple-editor@@setting-list-guide-color@@dark": "#2CAF84",
+  "maple-editor@@setting-code-inline@@dark": "#2CAF84"
 }
 ```
