@@ -3,3 +3,8 @@
 *secrets
 *.env
 
+// Plugins
+/copilot
+/.copilot
+/Agents
+/.opencode
