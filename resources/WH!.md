@@ -14,6 +14,10 @@ This folder is a curated library: books, papers, articles, courses, and videos t
 - When a resource teaches a concept, link the concept note:
   - Example: a testing book -> [[concepts/Pirámide de Testing]]
 
+## Subfolders
+
+- `30yBusinessKnowledge/` — notes distilled from a business course.
+
 ## Suggested Links
 
 - Concepts index: [[concepts/WH!]]
