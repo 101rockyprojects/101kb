@@ -65,10 +65,10 @@ En TICs, gobernar es asegurar que las tecnologías (bienes y servicios) se utili
 
 ![ISO_IEC_38500](../../assets/img/career/minor-project-management/ISO_IEC_38500.png)
 ##### Desafíos de TI
-![Pasted image 20240905205106](../../assets/img/career/minor-project-management/Pasted image 20240905205106.png)
-![Pasted image 20240905205336](../../assets/img/career/minor-project-management/Pasted image 20240905205336.png)
-![Pasted image 20240905205403](../../assets/img/career/minor-project-management/Pasted image 20240905205403.png)![Pasted image 20240905205443](../../assets/img/career/minor-project-management/Pasted image 20240905205443.png)
-![Pasted image 20240905205812](../../assets/img/career/minor-project-management/Pasted image 20240905205812.png)
+![Pasted image 20240905205106](../../assets/img/career/minor-project-management/estructura-de-gobierno-de-tecnologia(1).png)
+![Pasted image 20240905205336](../../assets/img/career/minor-project-management/estructura-de-gobierno-de-tecnologia(2).png)
+![Pasted image 20240905205403](../../assets/img/career/minor-project-management/estructura-de-gobierno-de-tecnologia(3).png)![Pasted image 20240905205443](../../assets/img/career/minor-project-management/estructura-de-gobierno-de-tecnologia(4).png)
+![Pasted image 20240905205812](../../assets/img/career/minor-project-management/estructura-de-gobierno-de-tecnologia(5).png)
 
 #### Gobierno Corporativo
 Junta y dirección ejecutiva -> Gerente general
@@ -84,7 +84,7 @@ Marco de responsabilidades para fomentar comportamientos y que se alineen a la m
 - Habilitación de las tecnologías: Canva, Jira, Trello, matriz de riesgos, inventario, indicadores de esfuerzo.
 
 #### Diferencias entre Gobierno Corporativo, Gobierno de Negocio y Gobierno de TI
-![Pasted image 20240905210120](../../assets/img/career/minor-project-management/Pasted image 20240905210120.png)
+![Pasted image 20240905210120](../../assets/img/career/minor-project-management/estructura-de-gobierno-de-tecnologia(6).png)
 
 |                          | **Gobierno de Negocio**                                                            | **Gobierno de TI**                                                                                      |
 | ------------------------ | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -115,4 +115,4 @@ Marco de responsabilidades para fomentar comportamientos y que se alineen a la m
 - CCO (Chief Communications Officer): Es el encargado de manejar la reputación corporativa, contactar con los medios de comunicación y desarrollar las estrategias de branding.
 
 #### Objetivos de Gobierno de TI
-![Pasted image 20240906183325](../../assets/img/career/minor-project-management/Pasted image 20240906183325.png)
+![Pasted image 20240906183325](../../assets/img/career/minor-project-management/estructura-de-gobierno-de-tecnologia(7).png)

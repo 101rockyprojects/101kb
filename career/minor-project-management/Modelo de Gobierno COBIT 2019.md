@@ -15,7 +15,7 @@ CREA VALOR -> OPTIMIZAR RIESGO Y RECURSOS
 #### Estructura
 Gobierno y administración de TI.
 Se refiere a todas las tecnologías y procesamiento de información que hace parte de cada proceso de la empresa.
-![Pasted image 20240906200414](../../assets/img/career/minor-project-management/Pasted image 20240906200414.png)
+![Pasted image 20240906200414](../../assets/img/career/minor-project-management/modelo-de-gobierno-cobit-2019(1).png)
 ##### Objetivos:
 - Entender definiciones y diferencias de Gobierno y Administración
 - Reconocer principios
@@ -24,8 +24,8 @@ Se refiere a todas las tecnologías y procesamiento de información que hace par
 - Describir áreas prioritarias
 
 ##### Principios:
-![Pasted image 20240906200526](../../assets/img/career/minor-project-management/Pasted image 20240906200526.png)
-![Pasted image 20240906200603](../../assets/img/career/minor-project-management/Pasted image 20240906200603.png)
+![Pasted image 20240906200526](../../assets/img/career/minor-project-management/modelo-de-gobierno-cobit-2019(2).png)
+![Pasted image 20240906200603](../../assets/img/career/minor-project-management/modelo-de-gobierno-cobit-2019(3).png)
 
 ##### Componentes: o Habilitadores
 - **Principios, Políticas y Marcos:** Son el vehículo para trasladar el comportamiento deseado en guías prácticas para la gestión diaria.

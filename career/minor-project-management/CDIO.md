@@ -20,4 +20,4 @@ CDIO (Conceive, Design, Implement, Operate) es un enfoque de trabajo muy usado e
 - [[career/minor-project-management/DMAIC]] (mejora continua)
 - [[career/minor-project-management/Project Charter]] (arranque y alineacion)
 
-![Pasted image 20241004190600](../../assets/img/career/minor-project-management/Pasted image 20241004190600.png)
+![Pasted image 20241004190600](../../assets/img/career/minor-project-management/cdio.png)

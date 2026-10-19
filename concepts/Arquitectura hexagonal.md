@@ -19,4 +19,4 @@ Imaginemos que estamos desarrollando una API que necesita acceder a datos de una
 ## **Dominio**
 Maneja eventos, no se deben hacer inyecciones dentro del dominio
 
-![Pasted image 20240703090639](../assets/img/concepts/Pasted image 20240703090639.png)
+![Pasted image 20240703090639](../assets/img/concepts/arquitectura-hexagonal.png)

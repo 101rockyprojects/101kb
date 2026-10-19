@@ -1,7 +1,7 @@
 ## ¿Qué es?
 Metodología de desarrollo, sea de software, hardware, productos, servicios, eventos o procesos.
 Similar a Kanban o [[CDIO]].
-![Pasted image 20241004185241](../../assets/img/career/minor-project-management/Pasted image 20241004185241.png)
+![Pasted image 20241004185241](../../assets/img/career/minor-project-management/design-thinking(1).png)
 
 ### Empatizar
 Actividad clave, pues con esta partimos de un problema o una necesidad, empatizar significa ver el panorama desde las expectativas y los dolores del usuario.
@@ -18,5 +18,5 @@ Actividad clave, pues con esta partimos de un problema o una necesidad, empatiza
 [Manual del emprendedor](https://drive.google.com/file/d/1WvDf636kFwSkPQFROx0CUjJAD5t3eitE/view)
 [Marco de trabajo de IBM](https://www.researchgate.net/publication/308995849_IBM_Design_Thinking_Software_Development_Framework)
 
-![Pasted image 20241004190148](../../assets/img/career/minor-project-management/Pasted image 20241004190148.png)
+![Pasted image 20241004190148](../../assets/img/career/minor-project-management/design-thinking(2).png)
 

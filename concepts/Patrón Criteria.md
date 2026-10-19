@@ -10,10 +10,10 @@ Frecuentemente, se necesita filtrar colecciones de objetos de la misma familia (
 
 #### Útil como Filtro o como DTO
 Imaginemos una interfaz que tiene todas las permutaciones posibles para buscar un producto en Amazon.
-![Pasted image 20240703134113](../assets/img/concepts/Pasted image 20240703134113.png)
+![Pasted image 20240703134113|593](../assets/img/concepts/patron-criteria(2).png)
 Rápidamente esto podrá hacer el código difícil de leer, mantener y de escalar. Esto va en contra del principio Open-Closed de SOLID.
 Con Criteria, todo lo que necesitamos es una interfaz tal que así:
-![Pasted image 20240703134451](../assets/img/concepts/Pasted image 20240703134451.png)
-![Pasted image 20240703134518](../assets/img/concepts/Pasted image 20240703134518.png)
-![Pasted image 20240703134040](../assets/img/concepts/Pasted image 20240703134040.png)
+![Pasted image 20240703134451](../assets/img/concepts/patron-criteria(3).png)
+![Pasted image 20240703134518](../assets/img/concepts/patron-criteria(4).png)
+![Pasted image 20240703134040](../assets/img/concepts/patron-criteria(1).png)
 ![][https://www.youtube.com/watch?v=RKWb3eI4wO4]

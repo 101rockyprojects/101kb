@@ -1,4 +1,4 @@
-![Pasted image 20241102082159](../../assets/img/career/minor-project-management/Pasted image 20241102082159.png)
+![Pasted image 20241102082159](../../assets/img/career/minor-project-management/pensamiento-sistemico.png)
 
 ## *Todo se relaciona entre sí*
 El todo es más que la suma de sus partes, la particularidad de las partes no comprende su conjunto en su totalidad.

@@ -20,4 +20,4 @@ DMAIC es un metodo de mejora continua (muy asociado a Six Sigma) para optimizar 
 - [[career/minor-project-management/Project Charter]]
 - [[career/minor-project-management/PESTEL]] (contexto externo antes de definir cambios)
 
-![Pasted image 20241004190722](../../assets/img/career/minor-project-management/Pasted image 20241004190722.png)
+![Pasted image 20241004190722](../../assets/img/career/minor-project-management/dmaic.png)

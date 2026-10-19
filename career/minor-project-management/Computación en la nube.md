@@ -1,16 +1,16 @@
 
-![Pasted image 20240921082212](../../assets/img/career/minor-project-management/Pasted image 20240921082212.png)
+![Pasted image 20240921082212](../../assets/img/career/minor-project-management/computacion-en-la-nube(1).png)
 Pago por lo que uso
-![Pasted image 20240921082323](../../assets/img/career/minor-project-management/Pasted image 20240921082323.png)
+![Pasted image 20240921082323](../../assets/img/career/minor-project-management/computacion-en-la-nube(2).png)
 Ejemplo
-![Pasted image 20240921082453](../../assets/img/career/minor-project-management/Pasted image 20240921082453.png)
+![Pasted image 20240921082453](../../assets/img/career/minor-project-management/computacion-en-la-nube(3).png)
 
 Lo que no se ve de un Software (Costos ocultos en amarillo)
-![Pasted image 20240921082548](../../assets/img/career/minor-project-management/Pasted image 20240921082548.png)
+![Pasted image 20240921082548](../../assets/img/career/minor-project-management/computacion-en-la-nube(4).png)
 
 Apps Script - Google
 https://developers.google.com/apps-script
-![Pasted image 20240921085155](../../assets/img/career/minor-project-management/Pasted image 20240921085155.png)
+![Pasted image 20240921085155](../../assets/img/career/minor-project-management/computacion-en-la-nube(5).png)
 
 https://codelabs.developers.google.com/
 https://learn.microsoft.com/es-es/office/dev/scripts/

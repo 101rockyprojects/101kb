@@ -1,4 +1,4 @@
-![Pasted image 20240920190425](../../assets/img/career/minor-project-management/Pasted image 20240920190425.png)
+![Pasted image 20240920190425](../../assets/img/career/minor-project-management/pestel(1).png)
 Thinkering
 Globalización
 Cada iniciativa se puede evaluar desde PESTEL
@@ -17,7 +17,7 @@ https://datos.gov.co/
 https://www.gartner.com/en/research/methodologies/methodologies
 https://www.dane.gov.co/index.php/estadisticas-por-tema
 
-![Pasted image 20240920194607](../../assets/img/career/minor-project-management/Pasted image 20240920194607.png)
+![Pasted image 20240920194607](../../assets/img/career/minor-project-management/pestel(2).png)
 
-![Pasted image 20240920195206](../../assets/img/career/minor-project-management/Pasted image 20240920195206.png)
-![Pasted image 20240920195318](../../assets/img/career/minor-project-management/Pasted image 20240920195318.png)
+![Pasted image 20240920195206](../../assets/img/career/minor-project-management/pestel(3).png)
+![Pasted image 20240920195318](../../assets/img/career/minor-project-management/pestel(4).png)

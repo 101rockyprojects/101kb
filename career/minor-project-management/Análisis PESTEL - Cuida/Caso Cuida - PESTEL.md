@@ -32,4 +32,4 @@ Al desarrollar la idea, se plantea que Cuida en el futuro tenga como objetivo se
 - Aumento en el número de adopciones y donaciones para los refugios.
 - Fortalecimiento de la colaboración entre la comunidad y los negocios locales en torno a la causa animal.
 - Contribución al logro de objetivos de desarrollo sostenible relacionados con el bienestar animal y la responsabilidad social.
-![Pasted image 20240926114840](../../../assets/img/career/minor-project-management/Análisis PESTEL - Cuida/Pasted image 20240926114840.png)
+![Pasted image 20240926114840](../../../assets/img/career/minor-project-management/Análisis PESTEL - Cuida/caso-cuida-pestel.png)
