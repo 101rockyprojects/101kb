@@ -9,6 +9,15 @@
 You've got spend your time getting better on what you LOVE TO DO!
 **GET OBSESSED BY IT**
 
+```cardlink
+url: https://www.youtube.com/c/SimonSquibb
+title: "Simon Squibb"
+description: "What’s your dream? Founder of Dream Inc, I help people dream again! I’ve made millions through entrepreneurship while starting 19 different businesses and investing in over 80 startups.I will NEVER sell a course. Everything I know goes on my YouTube channel or in my free newsletter that you can get here - https://www.simonsquibb.com/simonsquibb.com-blogSponsorship enquiries: partnerships@simonsquibb.com"
+host: www.youtube.com
+favicon: https://www.youtube.com/s/desktop/af0a3c1e/img/favicon_32x32.png
+image: https://yt3.googleusercontent.com/P8IYVJC3neabqmVMHYq2uwaV7C-oCgsycY_mht8qYNNAMJc_8GycT8fJ8Vglrtlp51vpSJzeNQ=s900-c-k-c0x00ffffff-no-rj
+```
+
 # Now the *Idea*
 If you love writing, start to find a partner that helps you, a mentor, a publisher, an agent...
 It's your passion what fuels the success.
