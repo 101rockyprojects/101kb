@@ -20,13 +20,14 @@ from __future__ import annotations
 import os
 import re
 import shutil
+import unicodedata
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
 
 
 RE_OBSIDIAN_EMBED = re.compile(r"!\[\[([^\]]+?)\]\]")
-RE_MD_IMAGE = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
+RE_MD_IMAGE = re.compile(r"!\[([^\]]*)\]\(((?:[^()]|\([^()]*\))+)\)")
 
 IMAGE_EXTS = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".svg"}
 
@@ -148,8 +149,112 @@ def make_rel_link(from_md: Path, to_file: Path) -> str:
     return rel.replace(os.sep, "/")
 
 
-def main() -> int:
-    root = Path(__file__).resolve().parents[1]
+def kebab_case(value: str) -> str:
+    normalized = unicodedata.normalize("NFKD", value)
+    ascii_value = "".join(char for char in normalized if not unicodedata.combining(char))
+    return re.sub(r"[^a-z0-9]+", "-", ascii_value.casefold()).strip("-") or "image"
+
+
+def rename_pasted_images(root: Path) -> None:
+    root = root.resolve()
+    img_root = root / "assets" / "img"
+    pasted_images = sorted(
+        (
+            path.resolve()
+            for path in img_root.rglob("*")
+            if path.is_file()
+            and path.name.casefold().startswith("pasted")
+            and path.suffix.casefold() in IMAGE_EXTS
+        ),
+        key=lambda path: str(path.relative_to(root)).casefold(),
+    )
+    markdown_files = sorted(
+        iter_md_files(root), key=lambda path: str(path.relative_to(root)).casefold()
+    )
+
+    refs_by_image: dict[Path, list[ImageRef]] = {}
+    for md_path in markdown_files:
+        for ref in find_image_refs(md_path):
+            source = resolve_source_image(root, md_path, ref.target)
+            if source is not None and source.resolve() in pasted_images:
+                refs_by_image.setdefault(source.resolve(), []).append(ref)
+
+    unresolved = [image for image in pasted_images if image not in refs_by_image]
+    primary_by_image: dict[Path, Path] = {}
+    images_by_primary: dict[Path, list[Path]] = {}
+    for image, refs in refs_by_image.items():
+        refs.sort(
+            key=lambda ref: (
+                str(ref.md_path.relative_to(root)).casefold(),
+                ref.md_path.read_text(encoding="utf-8", errors="replace").find(ref.raw),
+            )
+        )
+        primary = refs[0].md_path
+        primary_by_image[image] = primary
+        images_by_primary.setdefault(primary, []).append(image)
+
+    planned_destinations: dict[Path, Path] = {}
+    reserved_destinations: set[Path] = set()
+    referenced_images = set(refs_by_image)
+    for primary, images in images_by_primary.items():
+        images.sort(key=lambda image: str(image.relative_to(root)).casefold())
+        base = kebab_case(primary.stem)
+        for index, image in enumerate(images, start=1):
+            stem = f"{base}({index})" if len(images) > 1 else base
+            destination = image.with_name(f"{stem}{image.suffix}")
+            suffix_index = 1
+            while (
+                destination in reserved_destinations
+                or (destination.exists() and destination.resolve() not in referenced_images)
+            ):
+                destination = image.with_name(f"{base}({suffix_index}){image.suffix}")
+                suffix_index += 1
+            planned_destinations[image] = destination
+            reserved_destinations.add(destination)
+
+    text_by_md: dict[Path, str] = {}
+    for image, refs in refs_by_image.items():
+        destination = planned_destinations[image]
+        if destination == image:
+            continue
+        for ref in refs:
+            text = text_by_md.setdefault(
+                ref.md_path,
+                ref.md_path.read_text(encoding="utf-8", errors="replace"),
+            )
+            link = make_rel_link(ref.md_path, destination)
+            if ref.kind == "obsidian":
+                inner = ref.raw[3:-2]
+                alias = f"|{inner.split('|', 1)[1]}" if "|" in inner else ""
+                replacement = f"![[{link}{alias}]]"
+            else:
+                replacement = f"![{ref.alt or ''}]({link})"
+            text_by_md[ref.md_path] = text.replace(ref.raw, replacement)
+
+    for md_path, text in text_by_md.items():
+        md_path.write_text(text, encoding="utf-8")
+
+    temporary_paths: dict[Path, Path] = {}
+    for image, destination in planned_destinations.items():
+        if image == destination:
+            continue
+        temporary = image.with_name(f".{image.name}.organize-images-tmp")
+        while temporary.exists() or temporary in reserved_destinations:
+            temporary = temporary.with_name(f".{temporary.name}")
+        image.rename(temporary)
+        temporary_paths[image] = temporary
+
+    for image, temporary in temporary_paths.items():
+        destination = planned_destinations[image]
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        temporary.rename(destination)
+        print(f"{image.relative_to(root)} -> {destination.relative_to(root)} (Renamed)")
+
+    for image in unresolved:
+        print(f"UNRESOLVED: {image.relative_to(root)} (no Markdown reference found)")
+
+
+def organize_images(root: Path) -> int:
     img_root = root / "assets" / "img"
     if not img_root.exists():
         print("assets/img not found; nothing to do.")
@@ -160,26 +265,34 @@ def main() -> int:
     for md in iter_md_files(root):
         all_refs.extend(find_image_refs(md))
 
-    by_source_name: dict[str, list[ImageRef]] = {}
+    source_by_ref: dict[ImageRef, Path] = {}
+    missing: list[tuple[Path, str]] = []
     for r in all_refs:
-        by_source_name.setdefault(Path(r.target).name, []).append(r)
+        src = resolve_source_image(root, r.md_path, r.target)
+        if src is None:
+            missing.append((r.md_path, r.target))
+            continue
+        source_by_ref[r] = src.resolve()
 
-    # Track where the "canonical" moved file ended up for multi-use.
-    canonical_path_by_name: dict[str, Path] = {}
+    refs_by_source: dict[Path, list[ImageRef]] = {}
+    for r in all_refs:
+        src = source_by_ref.get(r)
+        if src is not None:
+            refs_by_source.setdefault(src, []).append(r)
+
+    canonical_path_by_source: dict[Path, Path] = {}
+    destination_by_source_and_dir: dict[tuple[Path, Path], Path] = {}
 
     # Update markdown files in-memory, then write back.
     text_by_md: dict[Path, str] = {}
     for md in iter_md_files(root):
         text_by_md[md] = md.read_text(encoding="utf-8", errors="replace")
 
-    missing: list[tuple[Path, str]] = []
-
     # Process refs, stable order by md path then appearance.
     for r in sorted(all_refs, key=lambda x: (str(x.md_path), x.md_path.stat().st_mtime)):
         md_dir = rel_md_dir(root, r.md_path)
-        src = resolve_source_image(root, r.md_path, r.target)
+        src = source_by_ref.get(r)
         if src is None:
-            missing.append((r.md_path, r.target))
             continue
 
         name = src.name
@@ -187,31 +300,43 @@ def main() -> int:
         ensure_parent(dest)
 
         # Move/copy strategy for multi-use images.
-        refs_for_name = by_source_name.get(name, [])
-        if len(refs_for_name) > 1:
-            if name not in canonical_path_by_name:
+        refs_for_source = refs_by_source[src]
+        if len(refs_for_source) > 1:
+            destination_key = (src, md_dir)
+            if src not in canonical_path_by_source:
                 # First time: move into first destination
-                if src.resolve() != dest.resolve():
+                if src != dest.resolve():
                     if dest.exists():
-                        # Prefer not to overwrite.
-                        pass
+                        canonical_path_by_source[src] = src
+                        dest = src
                     else:
                         shutil.move(str(src), str(dest))
-                canonical_path_by_name[name] = dest
+                        canonical_path_by_source[src] = dest
+                else:
+                    canonical_path_by_source[src] = dest
+                destination_by_source_and_dir[destination_key] = dest
             else:
                 # Subsequent: copy from canonical into this destination if needed
-                canon = canonical_path_by_name[name]
-                if dest.resolve() != canon.resolve():
-                    if not dest.exists():
-                        shutil.copy2(str(canon), str(dest))
-        else:
-            # Single-use: just move it if needed
-            if src.resolve() != dest.resolve():
-                if dest.exists():
-                    # Avoid overwrite; keep source where it is and just link to it.
-                    dest = src
+                known_destination = destination_by_source_and_dir.get(destination_key)
+                if known_destination is not None:
+                    dest = known_destination
                 else:
-                    shutil.move(str(src), str(dest))
+                    canon = canonical_path_by_source[src]
+                    if dest.resolve() == canon.resolve():
+                        destination_by_source_and_dir[destination_key] = dest
+                    elif not dest.exists():
+                        shutil.copy2(str(canon), str(dest))
+                        destination_by_source_and_dir[destination_key] = dest
+                    else:
+                        dest = canon
+                        destination_by_source_and_dir[destination_key] = dest
+        elif src != dest.resolve():
+            # Single-use: just move it if needed
+            if dest.exists():
+                # Avoid overwrite; keep source where it is and just link to it.
+                dest = src
+            else:
+                shutil.move(str(src), str(dest))
 
         rel_link = make_rel_link(r.md_path, dest)
         alt = r.alt if (r.kind == "markdown" and r.alt is not None) else Path(name).stem
@@ -232,6 +357,12 @@ def main() -> int:
     return 0
 
 
+def main() -> int:
+    root = Path(__file__).resolve().parents[1]
+    result = organize_images(root)
+    rename_pasted_images(root)
+    return result
+
+
 if __name__ == "__main__":
     raise SystemExit(main())
-
