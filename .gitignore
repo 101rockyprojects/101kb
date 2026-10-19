@@ -2,6 +2,7 @@
 /.obsidian
 *secrets
 *.env
+.DS_store
 
 // Plugins
 /copilot
