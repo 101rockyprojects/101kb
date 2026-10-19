@@ -22,6 +22,16 @@ RAG es un enfoque donde el modelo no depende solo de lo que "recuerda" del entre
 - Alucinacion si el contexto no llega o llega irrelevante.
 - Necesitas evaluacion (precision de retrieval, groundedness).
 
+
 ## Related
 
 - [[concepts/IA/Fine-tunning]]
+- [[Temperature]]
+
+```cardlink
+url: https://www.datalytyx.com/rag-for-dummies/
+title: "RAG For Dummies - Datalytyx"
+host: www.datalytyx.com
+favicon: https://www.datalytyx.com/wp-content/uploads/2016/08/cropped-cropped-favicon-32x32.png
+image: https://www.datalytyx.com/wp-content/uploads/2023/12/rag-for-dummies.jpg
+```
