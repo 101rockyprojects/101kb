@@ -69,6 +69,7 @@ Personal configurations for better performance
 	- **Linter**: Lint when save 
 	- **Remember cursor position**: Automatic re-position of a previous opened file
 	- **Style Settings**: Enhance style customization (ft. Maple)
+	- **Code Space**: Visualization of code as VSC
 
 ### Basic Style Settings
 
